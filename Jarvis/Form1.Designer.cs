@@ -30,14 +30,12 @@
 		{
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.randomizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.randomizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.rand5 = new System.Windows.Forms.ToolStripMenuItem();
 			this.rand10 = new System.Windows.Forms.ToolStripMenuItem();
 			this.rand15 = new System.Windows.Forms.ToolStripMenuItem();
 			this.rand20 = new System.Windows.Forms.ToolStripMenuItem();
-			this.slowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.fastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.menuStrip1.SuspendLayout();
@@ -64,6 +62,13 @@
 			this.menuStrip1.TabIndex = 1;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
+			// startToolStripMenuItem
+			// 
+			this.startToolStripMenuItem.Name = "startToolStripMenuItem";
+			this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+			this.startToolStripMenuItem.Text = "Start";
+			this.startToolStripMenuItem.Click += new System.EventHandler(this.Jarvis);
+			// 
 			// randomizeToolStripMenuItem
 			// 
 			this.randomizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -75,56 +80,33 @@
 			this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
 			this.randomizeToolStripMenuItem.Text = "Randomize...";
 			// 
-			// startToolStripMenuItem
-			// 
-			this.startToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.slowToolStripMenuItem,
-            this.fastToolStripMenuItem});
-			this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-			this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-			this.startToolStripMenuItem.Text = "Start";
-			// 
 			// rand5
 			// 
 			this.rand5.Name = "rand5";
-			this.rand5.Size = new System.Drawing.Size(152, 22);
+			this.rand5.Size = new System.Drawing.Size(86, 22);
 			this.rand5.Text = "5";
 			this.rand5.Click += new System.EventHandler(this.randomize_n);
 			// 
 			// rand10
 			// 
 			this.rand10.Name = "rand10";
-			this.rand10.Size = new System.Drawing.Size(152, 22);
+			this.rand10.Size = new System.Drawing.Size(86, 22);
 			this.rand10.Text = "10";
 			this.rand10.Click += new System.EventHandler(this.randomize_n);
 			// 
 			// rand15
 			// 
 			this.rand15.Name = "rand15";
-			this.rand15.Size = new System.Drawing.Size(152, 22);
+			this.rand15.Size = new System.Drawing.Size(86, 22);
 			this.rand15.Text = "15";
 			this.rand15.Click += new System.EventHandler(this.randomize_n);
 			// 
 			// rand20
 			// 
 			this.rand20.Name = "rand20";
-			this.rand20.Size = new System.Drawing.Size(152, 22);
+			this.rand20.Size = new System.Drawing.Size(86, 22);
 			this.rand20.Text = "20";
 			this.rand20.Click += new System.EventHandler(this.randomize_n);
-			// 
-			// slowToolStripMenuItem
-			// 
-			this.slowToolStripMenuItem.Name = "slowToolStripMenuItem";
-			this.slowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.slowToolStripMenuItem.Text = "Slow";
-			this.slowToolStripMenuItem.Click += new System.EventHandler(this.Jarvis);
-			// 
-			// fastToolStripMenuItem
-			// 
-			this.fastToolStripMenuItem.Name = "fastToolStripMenuItem";
-			this.fastToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.fastToolStripMenuItem.Text = "Fast";
-			this.fastToolStripMenuItem.Click += new System.EventHandler(this.Jarvis);
 			// 
 			// clearToolStripMenuItem
 			// 
@@ -161,8 +143,6 @@
 		private System.Windows.Forms.ToolStripMenuItem rand15;
 		private System.Windows.Forms.ToolStripMenuItem rand20;
 		private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem slowToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem fastToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
 	}
 }

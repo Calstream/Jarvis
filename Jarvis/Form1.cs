@@ -54,10 +54,11 @@ namespace Jarvis
 
 		private void Jarvis(object sender, EventArgs e)
 		{
-			var sorted = points.OrderBy(p => p.X).ThenBy(p => p.Y);
+			var sorted = points.OrderBy(po => po.X).ThenBy(po => po.Y);
 			List<Point> hull = new List<Point>();
 			hull.Add(sorted.ElementAt(0));
 			Point current = sorted.ElementAt(0);
+			//hull.Add(sorted.ElementAt(1));
 			Point last = sorted.ElementAt(1);
 			do
 			{
@@ -65,11 +66,24 @@ namespace Jarvis
 				{
 					if (p == current || p == last)
 						continue;
-					
+					int pos = (last.X - current.X) * (p.Y - current.Y) 
+						- (last.Y - current.Y) * (p.X - current.X);
+					if (pos < 0)
+						last = p;
 				}
+				hull.Add(last);
 			}
-			while (current != last);
-			//position = sign((Bx - Ax) * (Y - Ay) - (By - Ay) * (X - Ax))
+			while (current != hull.Last());
+			Point cur = hull.First();
+			Brush br = new SolidBrush(Color.Black);
+			Pen pen = new Pen(br, 2);
+			Graphics g = Graphics.FromImage(pictureBox1.Image);
+			foreach (var hp in hull)
+			{
+				g.DrawLine(pen, cur, hp);
+				cur = hp;
+			}
+			pictureBox1.Refresh();
 		}
 
 		private void clearToolStripMenuItem_Click(object sender, EventArgs e)
