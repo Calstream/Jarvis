@@ -12,7 +12,7 @@ namespace Jarvis
 {
 	public partial class Form1 : Form
 	{
-		HashSet<Point> points;
+		List<Point> points;
 
 		public Form1()
 		{
@@ -20,7 +20,7 @@ namespace Jarvis
 			pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
 			var g = Graphics.FromImage(pictureBox1.Image);
 			g.Clear(Color.White);
-			points = new HashSet<Point>();
+			points = new List<Point>();
 		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
@@ -54,6 +54,8 @@ namespace Jarvis
 
 		private void Jarvis(object sender, EventArgs e)
 		{
+			var sorted = points.OrderBy(p => p.X).ThenBy(p => p.Y);
+			Point leftmost = sorted.ElementAt(0);
 
 		}
 
