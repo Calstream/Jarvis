@@ -55,8 +55,21 @@ namespace Jarvis
 		private void Jarvis(object sender, EventArgs e)
 		{
 			var sorted = points.OrderBy(p => p.X).ThenBy(p => p.Y);
-			Point leftmost = sorted.ElementAt(0);
-
+			List<Point> hull = new List<Point>();
+			hull.Add(sorted.ElementAt(0));
+			Point current = sorted.ElementAt(0);
+			Point last = sorted.ElementAt(1);
+			do
+			{
+				foreach (var p in sorted)
+				{
+					if (p == current || p == last)
+						continue;
+					
+				}
+			}
+			while (current != last);
+			//position = sign((Bx - Ax) * (Y - Ay) - (By - Ay) * (X - Ax))
 		}
 
 		private void clearToolStripMenuItem_Click(object sender, EventArgs e)
