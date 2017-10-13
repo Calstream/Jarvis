@@ -64,11 +64,11 @@ namespace Jarvis
 			{
 				foreach (var p in sorted)
 				{
-					if (p == current || p == last)
+					if (p == current || p == last  || hull.Contains(p))
 						continue;
 					int pos = (last.X - current.X) * (p.Y - current.Y) 
 						- (last.Y - current.Y) * (p.X - current.X);
-					if (pos < 0)
+					if (pos > 0)
 						last = p;
 				}
 				hull.Add(last);
